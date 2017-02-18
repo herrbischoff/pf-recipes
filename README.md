@@ -1,7 +1,7 @@
 # Recipes for the pf Firewall
 
 ### Annoy Abusive Hosts
-This list of IP addresses (`/etc/slowqueue`) is for people who you consider abusers, but you want to annoy them. IPs in this list will be subjected to 97% packet loss. The 3% of connections that do make it through will come through to your services as expected. In effect, the hosts will not be blocked entirely but have their packets randomly dropped. This is effective against download accelerators, bots, and scanners.
+This list of IP addresses (`/etc/slowqueue`) is for people who you consider abusers but want to annoy. IPs in this list will be subjected to 97% packet loss. The 3% of connections that do make it through will come through to your services as expected. In effect, the hosts will not be blocked entirely but have their packets randomly dropped. This is effective against download accelerators, bots, and scanners.
 ```
 table <slowqueue> persist file "/etc/slowqueue"
 block in quick from <slowqueue> to any probability 97%
